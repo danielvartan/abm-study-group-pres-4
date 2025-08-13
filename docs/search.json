@@ -1,0 +1,198 @@
+[
+  {
+    "objectID": "index.html#hi-there",
+    "href": "index.html#hi-there",
+    "title": "Patterns for Model Structure",
+    "section": "Hi there! 👋",
+    "text": "Hi there! 👋\n\n\nIn this presentation, I will provide an overview on Pattern-Oriented Modeling—an approach for designing structurally realistic models.\n\nWe’ll explore the following topics:\n\nIntroduction\nPattern-Oriented Modeling\nHow to Start\nExample"
+  },
+  {
+    "objectID": "index.html#part-iii-chapter-18",
+    "href": "index.html#part-iii-chapter-18",
+    "title": "Patterns for Model Structure",
+    "section": "Part III & Chapter 18",
+    "text": "Part III & Chapter 18\n\n\n\nPart II was focused on specific parts of a model or its computer implementation.\nPart III is more strategic and thus addresses full ABMs.\n\n\nChapter 18: First task of pattern-­oriented modeling ― Using observed pat­terns to design a model structure that includes enough to make the model sufficiently realistic and testable but not unnecessarily complex.\n\n\n\n\n\n(Railsback & Grimm, 2019)"
+  },
+  {
+    "objectID": "index.html#what-is-a-model",
+    "href": "index.html#what-is-a-model",
+    "title": "Patterns for Model Structure",
+    "section": "What Is a Model?",
+    "text": "What Is a Model?\nA model is a simplified representation of a system. It can be conceptual, verbal, diagrammatic, physical, or formal (mathematical) (Sayama, 2015).\nA good model is simple, valid, and robust (Sayama, 2015).\nAll models are wrong, but some are useful (Box, 1979, p. 202).\n\n\n\n\n\n\n\n(Mercator projection by Daniel R. Strebe. Earth photo by the European Space Agency)\n\n“We use models as simplified and purposeful representations to answer research questions and solve problems. A “simplified representation” means that we use only a limited and preferably small number of variables to represent the real system” (Railsback & Grimm, 2019, p. 233)\n\\(+\\) Variables \\(\\rightarrow\\) \\(+\\) Complex\n“Models in general and ABMs in particular should therefore be as simple as possible and use the most parsimonious representation that still captures key characteristics and behaviors of a real system” (Railsback & Grimm, 2019, p. 233)\nStructurally realistic models"
+  },
+  {
+    "objectID": "index.html#power-laws-factor-sparsity",
+    "href": "index.html#power-laws-factor-sparsity",
+    "title": "Patterns for Model Structure",
+    "section": "Power Laws & Factor Sparsity",
+    "text": "Power Laws & Factor Sparsity\n\n\nPower laws (\\(y = ax^{-k}\\))\nPareto’s/Zipf’s distributions\n~80/20 rule: 80% of the effects come from 20% of the causes.\n[…] the distributions of the sizes of cities, earthquakes, forest fires, solar flares, moon craters and people’s personal fortunes all appear to follow power laws (Newman, 2005).\n\nTop U.S. retail companies by market cap as of September 2024\n\n\n\n\n\n\n\n(Artwork by Retail Dogma)"
+  },
+  {
+    "objectID": "index.html#the-modeling-cycle",
+    "href": "index.html#the-modeling-cycle",
+    "title": "Patterns for Model Structure",
+    "section": "The Modeling Cycle",
+    "text": "The Modeling Cycle\n\n\n\nFormulate the question\nAssemble hypotheses for essential processes and structures\nChoose scales, entities, state variables, processes, and parameters\nImplement the model\nAnalyze, test, and revise the model\nCommunicate the model\n\n\n\n\n\n\n\n\n(Railsback & Grimm, 2019, pp. 7–10)"
+  },
+  {
+    "objectID": "index.html#patterns",
+    "href": "index.html#patterns",
+    "title": "Patterns for Model Structure",
+    "section": "Patterns",
+    "text": "Patterns\nA pattern is anything beyond random variation.\nWe can think of patterns as regularities, signals.\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlignment: A bird tends to turn so that it is moving in the same direction that nearby birds are moving.\nSeparation: A bird will turn to avoid another bird which gets too close.\nCohesion: A bird will move towards other nearby birds (unless another bird is too close).\n\n\n(Video by National Geographic. Flocking model by Wilensky (1998), based on Reynolds (1987).)"
+  },
+  {
+    "objectID": "index.html#pattern-oriented-modeling-1",
+    "href": "index.html#pattern-oriented-modeling-1",
+    "title": "Patterns for Model Structure",
+    "section": "Pattern-Oriented Modeling",
+    "text": "Pattern-Oriented Modeling\nPattern-Oriented Modeling (POM) is the use of patterns observed in the real system as the additional information we need to make ABMs structurally realistic and, therefore, more general, useful, scientific, and accurate.\n\n\n(Beech forest model. Reproduced from Grimm et al. (2005, Figure 2), based on Wissel (1992) and Neuert et al. (2001).)\n\nPattern-oriented model design. Observed patterns that characterize old-growth beech forests [(A); images: front, M. Flade; right, C. Rademacher; top, S. Winter] include a horizontal mosaic of developmental stages [(B); x scale: 400 m; modified from (42)], the vertical patterns of tree size that define the developmental stages [(C), showing the late decaying stage; x scale: ~60 m; modified from (43)], and distributions of fallen large trees [(D), a map of fallen wood; ellipses indicate crown projections of standing trees; x scale: ~60 m; modified from (43)]. To allow these patterns to emerge from it, the model includes a grid-based horizontal structure [(E), showing grid cells in three developmental stages; x scale: 570 m), a grid-based vertical structure [(F), showing each grid cell’s percentage cover for four height classes; total area shown: 1 ha)], and individual representation of large trees [(G), showing one cell’s trees in the largest two height classes; cell area: 204 m²); (E) to (G) modified from (18)]. (Grimm et al., 2005, Figure 2)"
+  },
+  {
+    "objectID": "index.html#filters",
+    "href": "index.html#filters",
+    "title": "Patterns for Model Structure",
+    "section": "Filters",
+    "text": "Filters\nA filter sepa­rates things, such as models that do and do not reproduce the cyclic pattern. The basic idea of POM is to use multiple patterns to design and analyze models.\nA small number of weak and qualitative but diverse patterns that characterize a system with respect to the modeling problem can be as powerful a filter as one very strong pattern, and are often easier to obtain.\nFor most systems, however, one single pattern is not enough to decode the internal organi­zation. Multiple patterns, or filters, are needed.\n\n(Railsback & Grimm, 2019)"
+  },
+  {
+    "objectID": "index.html#nonrealistic-models",
+    "href": "index.html#nonrealistic-models",
+    "title": "Patterns for Model Structure",
+    "section": "Nonrealistic Models",
+    "text": "Nonrealistic Models"
+  },
+  {
+    "objectID": "index.html#odd-protocol",
+    "href": "index.html#odd-protocol",
+    "title": "Patterns for Model Structure",
+    "section": "ODD Protocol",
+    "text": "ODD Protocol\n\n\nOverview\n\n\nPurpose and Patterns\nEntities, State Variables, and Scales\nProcess Overview and Scheduling\n\n\n\n\n\nDesign Concepts\n\n\nBasic Principles\nEmergence\nAdaptation\nObjectives\nLearning\nPrediction\nSensing\nInteraction\nStochasticity\nCollectives\nObservation\n\n\n\n\n\nDetails\n\n\nInitialization\nInput Data\nSubmodels\n\n\n\n\n(Based on Railsback & Grimm (2019))"
+  },
+  {
+    "objectID": "index.html#ok-but-how",
+    "href": "index.html#ok-but-how",
+    "title": "Patterns for Model Structure",
+    "section": "Ok, But How?",
+    "text": "Ok, But How?\nHow do you identify a set of diverse patterns that characterize the system for the problem that you are modeling?\nThis task, like much of modeling, uses judgment, knowledge of the sys­tem, and often, trial and error.\n\n\n\nStart by formulating your model (writing a description of it using the ODD protocol), with the purpose of the model as the only filter for designing the model structure.\n\nIdentify a set of observed patterns that you believe characterize your system relative to the problem you model.\n\nDefine criteria for pattern-­matching: How will you decide whether the model does or does not reproduce each pattern?\nNow review your draft model formulation and determine what additional things need to be in the model to make it possible for your characteristic patterns to emerge from it.\n\n\n\n(Railsback & Grimm, 2019, p. 240)"
+  },
+  {
+    "objectID": "index.html#key-questions",
+    "href": "index.html#key-questions",
+    "title": "Patterns for Model Structure",
+    "section": "Key Questions",
+    "text": "Key Questions\n\n\n(Gallagher et al., 2021)"
+  },
+  {
+    "objectID": "index.html#where-in-the-ecological-hierarchy-can-we-find-patterns",
+    "href": "index.html#where-in-the-ecological-hierarchy-can-we-find-patterns",
+    "title": "Patterns for Model Structure",
+    "section": "Where in the Ecological Hierarchy Can We Find Patterns?",
+    "text": "Where in the Ecological Hierarchy Can We Find Patterns?\n\n\n(Gallagher et al., 2021)"
+  },
+  {
+    "objectID": "index.html#how-should-simulations-and-observations-be-compared",
+    "href": "index.html#how-should-simulations-and-observations-be-compared",
+    "title": "Patterns for Model Structure",
+    "section": "How Should Simulations and Observations Be Compared?",
+    "text": "How Should Simulations and Observations Be Compared?\n\n\n(Gallagher et al., 2021)"
+  },
+  {
+    "objectID": "index.html#the-modeling-cycle-1",
+    "href": "index.html#the-modeling-cycle-1",
+    "title": "Patterns for Model Structure",
+    "section": "The Modeling Cycle",
+    "text": "The Modeling Cycle\n\n\n\nFormulate the question\nAssemble hypotheses for essential processes and structures\nChoose scales, entities, state variables, processes, and parameters\nImplement the model\nAnalyze, test, and revise the model\nCommunicate the model\n\n\n\n\n\n\n\n\n(Railsback & Grimm, 2019, pp. 7–10)"
+  },
+  {
+    "objectID": "index.html#abstract-versus-empirical-models",
+    "href": "index.html#abstract-versus-empirical-models",
+    "title": "Patterns for Model Structure",
+    "section": "Abstract versus Empirical Models",
+    "text": "Abstract versus Empirical Models\n\n\nAbstract models allow for the examination of general principles in detail (Rand & Wilensky, 2007).\nEmpirical models are generally more oriented towards prediction and often need to address speciﬁc questions posed by policy-makers at particular sites (Sun et al., 2016).\nFull spectrum modeling combines the benefits of abstract and empirical models (Rand & Wilensky, 2007).\n\n\n\n\n\n\n\n(Artwork by Sun et al. (2016, Figure 3), based on Grimm et al. (2005, Figure 1))\n\nSimple (Rand & Wilensky, 2007; Sun et al., 2016) or abstract (Sun et al., 2016) models versus photograph (Parker et al., 2003), empirical, complicated (Sun et al., 2016), elaborated and realistic (ER) (Rand & Wilensky, 2007) models.\nSimple model example: Schelling’s segregation model (Schelling, 1971).\nWe call this the ‘Medawar zone’ because Medawar described a similar relation between the difficulty of a scientific problem and its payoff (Grimm et al., 2005)."
+  },
+  {
+    "objectID": "index.html#question",
+    "href": "index.html#question",
+    "title": "Patterns for Model Structure",
+    "section": "Question",
+    "text": "Question\n\nDoes climate change impact the health and nutrition of Brazilian children under five years old?"
+  },
+  {
+    "objectID": "index.html#conceptual-model",
+    "href": "index.html#conceptual-model",
+    "title": "Patterns for Model Structure",
+    "section": "Conceptual Model",
+    "text": "Conceptual Model\n\n\n\n\n\n(Reproduced from Carvalho et al. (2024, Figura 2))\n\nConceptual model of the environment-food-health nexus among children under five years of age using the complex systems approach: (B) the balancing feedback loop, (R) the reinforcing feedback loop, (+) positive relationship between the factors, (-) negative relationship between the factors."
+  },
+  {
+    "objectID": "index.html#conceptual-model-1",
+    "href": "index.html#conceptual-model-1",
+    "title": "Patterns for Model Structure",
+    "section": "Conceptual Model",
+    "text": "Conceptual Model\n\n\n\n\n\n(Adapted from Carvalho et al. (2024, Figura 2))\n\nConceptual model of the environment-food-health nexus among children under five years of age using the complex systems approach: (B) the balancing feedback loop, (R) the reinforcing feedback loop, (+) positive relationship between the factors, (-) negative relationship between the factors."
+  },
+  {
+    "objectID": "index.html#patterns-1",
+    "href": "index.html#patterns-1",
+    "title": "Patterns for Model Structure",
+    "section": "Patterns",
+    "text": "Patterns\n\n\nResponse in food production to global changes in temperature and precipitation\n\n\n\nResponse in food accessibility for low-income families to the reduction in food production\n\n\n\nResponse in healthy food consumption by low-income families to the reduction in food accessibility\n\n\n\nResponse in health and nutrition of children from low-income families to the reduction in healthy food consumption\n\n\n\n\n\n\n(Artwork by Viktoriia Ablohina)"
+  },
+  {
+    "objectID": "index.html#agents",
+    "href": "index.html#agents",
+    "title": "Patterns for Model Structure",
+    "section": "Agents",
+    "text": "Agents\n\n\n👁️⃤\n\n\n\nObserver\n\n\n\n\n\n\nGrid Cells\n\n⊞ 🌡️ 🌧️\n\n\n\n\nFood\n\n🍌🍅 🥬🌾 🥛🥩\n\n\n\n\nFamilies\n\n👨‍👩‍👧 👩‍👩‍👦 👨‍👨‍👧\n\n\n\n\nChildren\n\n🧒 👧"
+  },
+  {
+    "objectID": "index.html#logoclim",
+    "href": "index.html#logoclim",
+    "title": "Patterns for Model Structure",
+    "section": "LogoClim",
+    "text": "LogoClim\n\n\n(Vartanian et al., 2025c)"
+  },
+  {
+    "objectID": "index.html#foodclim",
+    "href": "index.html#foodclim",
+    "title": "Patterns for Model Structure",
+    "section": "FoodClim",
+    "text": "FoodClim\n🚧 Under development 🚧\n\n\n(Vartanian et al., 2025a)"
+  },
+  {
+    "objectID": "index.html#globalsyndemic",
+    "href": "index.html#globalsyndemic",
+    "title": "Patterns for Model Structure",
+    "section": "GlobalSyndemic",
+    "text": "GlobalSyndemic\n🚧 Under development 🚧\n\n\n(Vartanian et al., 2025b)"
+  },
+  {
+    "objectID": "index.html#closing-remarks",
+    "href": "index.html#closing-remarks",
+    "title": "Patterns for Model Structure",
+    "section": "Closing Remarks",
+    "text": "Closing Remarks\n \nThis presentation was created with the Quarto Publishing System. The code and materials are available on GitHub.\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Patterns for Model Structure",
+    "section": "References",
+    "text": "References\n\nIn accordance with the American Psychological Association (APA) Style, 7th edition.\n\n\n\nBox, G. E. P. (1979). Robustness in the strategy of scientific model building. In R. L. Launer & G. N. Wilkinson (Eds.), Robustness in statistics (pp. 201–236). Academic Press. https://doi.org/10.1016/B978-0-12-438150-6.50018-2\n\n\nCarvalho, A. M. de, Garcia, L. M. T., Lourenço, B. H., Verly Junior, E., Carioca, A. A. F., Jacob, M. C. M., Gomes, S. M., & Sarti, F. M. (2024). Exploring the nexus between food systems and the global syndemic among children under five years of age through the complex systems approach. International Journal of Environmental Research and Public Health, 21(7, 7), 893. https://doi.org/10.3390/ijerph21070893\n\n\nDodig-Crnkovic, G., & Giovagnoli, R. (Eds.). (2013). Computing nature: Turing centenary perspective (Vol. 7). Springer. https://doi.org/10.1007/978-3-642-37225-4\n\n\nGallagher, C. A., Chudzinska, M., Larsen-Gray, A., Pollock, C. J., Sells, S. N., White, P. J. C., & Berger, U. (2021). From theory to practice in pattern-oriented modelling: Identifying and using empirical patterns in predictive models. Biological Reviews, 96(5), 1868–1888. https://doi.org/10.1111/brv.12729\n\n\nGrimm, V., Revilla, E., Berger, U., Jeltsch, F., Mooij, W. M., Railsback, S. F., Thulke, H.-H., Weiner, J., Wiegand, T., & DeAngelis, D. L. (2005). Pattern-oriented modeling of agent-based complex systems: Lessons from ecology. Science, 310(5750), 987–991. https://doi.org/10.1126/science.1116681\n\n\nMeadows, D. (1999). Leverage points: Places to intervene in a system. The Sustainability Institute. https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/\n\n\nMeadows, D. H. (2008). Thinking in systems: A primer (D. Wright, Ed.). Chelsea Green Publishing.\n\n\nNeuert, C., Rademacher, C., Grundmann, V., Wissel, C., & Grimm, V. (2001). Struktur und Dynamik von Buchenurwäldern: Ergebnisse des regelbasierten Modells BEFORE. Naturschutz und Landschaftsplanung, 33(6), 173–183.\n\n\nNewman, M. (2005). Power laws, Pareto distributions and Zipf’s law. Contemporary Physics, 46(5), 323–351. https://doi.org/10.1080/00107510500052444\n\n\nParker, D. C., Manson, S. M., Janssen, M. A., Hoffmann, M. J., & Deadman, P. (2003). Multi-agent systems for the simulation of land-use and land-cover change: A review. Annals of the Association of American Geographers, 93(2), 314–337. https://doi.org/10.1111/1467-8306.9302004\n\n\nRailsback, S. F., & Grimm, V. (2019). Agent-based and individual-based modeling: A practical introduction (2nd ed.). Princeton University Press.\n\n\nRand, W., & Wilensky, U. (2007). Full spectrum modeling: From simplicity to elaboration and realism in urban pattern formation. North American Association for Computational Social and Organizational Sciences (NAACSOS). http://ccl.northwestern.edu/2007/FullSpectrum.pdf\n\n\nReynolds, C. W. (1987). Flocks, herds and schools: A distributed behavioral model. Proceedings of the 14th Annual Conference on Computer Graphics and Interactive Techniques, 21, 25–34. https://doi.org/10.1145/37401.37406\n\n\nSayama, H. (2015). Introduction to the modeling and analysis of complex systems. Open SUNY Textbooks.\n\n\nSchelling, T. C. (1971). Dynamic models of segregation. The Journal of Mathematical Sociology, 1(2), 143–186. https://doi.org/10.1080/0022250X.1971.9989794\n\n\nSun, Z., Lorscheid, I., Millington, J. D., Lauf, S., Magliocca, N. R., Groeneveld, J., Balbi, S., Nolzen, H., Müller, B., Schulze, J., & Buchmann, C. M. (2016). Simple or complicated agent-based models? A complicated issue. Environmental Modelling & Software, 86, 56–67. https://doi.org/10.1016/j.envsoft.2016.09.006\n\n\nVartanian, D., Garcia, L., & Carvalho, A. M. (2025a). FoodClim: Food yield responses to climate change in NetLogo [Computer software]. https://github.com/sustentarea/foodclim\n\n\nVartanian, D., Garcia, L., & Carvalho, A. M. (2025b). GlobalSyndemic: Climate change effects on child nutrition in Brazil [Computer software]. https://github.com/sustentarea/globalsyndemic\n\n\nVartanian, D., Garcia, L., & Carvalho, A. M. (2025c). LogoClim: WorldClim in NetLogo [Computer software]. https://github.com/sustentarea/logoclim\n\n\nWilensky, U. (1998). Flocking model [Computer software]. Center for Connected Learning; Computer Based Modeling at Northwestern University. http://ccl.northwestern.edu/netlogo/models/Flocking\n\n\nWissel, C. (1992). Modelling the mosaic cycle of a Middle European beech forest. Ecological Modelling, 63(1), 29–43. https://doi.org/10.1016/0304-3800(92)90060-R"
+  },
+  {
+    "objectID": "index.html#thank-you",
+    "href": "index.html#thank-you",
+    "title": "Patterns for Model Structure",
+    "section": "Thank you!",
+    "text": "Thank you!\n\n\n\n\n\n(Artwork by Allison Horst)"
+  },
+  {
+    "objectID": "index.html#leverage-points",
+    "href": "index.html#leverage-points",
+    "title": "Patterns for Model Structure",
+    "section": "Leverage Points",
+    "text": "Leverage Points\n\n\nThere are places within a complex system where a small shift in one thing can produce big changes in everything (D. Meadows, 1999).\nLeverage points are points of power (D. H. Meadows, 2008).\nPossible states, even if unlikely: by modelling such interactions, it can suggest that properties exist in the system that had not been noticed in the real world situation (Dodig-Crnkovic & Giovagnoli, 2013)."
+  }
+]

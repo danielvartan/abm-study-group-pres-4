@@ -1,0 +1,594 @@
+## Hi there! 👋 {.smaller}
+
+```{r}
+#| label: setup
+#| include: false
+
+library(here)
+
+source(here("R/_setup.R"))
+```
+
+::::: {.columns}
+:::: {.column style="width: 55%;"}
+In this presentation, I will provide an overview on *Pattern-Oriented Modeling*—an approach for designing structurally realistic models.
+
+::: {style="padding-top: 15px;"}
+We'll explore the following topics:
+
+1. [**Introduction**]{.brand-brown}
+1. [**Pattern-Oriented Modeling**]{.brand-brown}
+1. [**How to Start**]{.brand-brown}
+1. [**Example**]{.brand-brown}
+:::
+::::
+:::: {.column style="width: 45%; text-align: center"}
+![](images/yarn-colour.jpg){style="width: 55%;"}
+
+![](images/entangled-threads.jpg){style="width: 65%; margin-top: -25px;"}
+::::
+:::::
+
+::: {.notes}
+:::
+
+# Introduction
+
+## Part III & Chapter 18 {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 50%;"}
+<!-- **Part I** was focused on introducing the basics of agent-based modeling. -->
+
+**Part II** was focused on specific parts of a model or its computer implementation.
+
+[**Part III**]{.brand-red} is more strategic and thus addresses full ABMs.
+
+`<br>`{=html}
+
+::: {style="font-size: 0.9em"}
+**Chapter 18**: *First task of pattern-­oriented modeling* ― Using observed pat­terns to design a model structure that includes enough to make the model sufficiently realistic and testable but not unnecessarily complex.
+:::
+::::
+:::: {.column style="width: 50%; text-align: center"}
+![](images/railsback-2019-p-239.png){style="width: 80%; border: 1px solid;"}
+::::
+:::::
+
+::: footer
+[@railsback2019]
+:::
+
+## What Is a Model? {.smaller}
+
+A model is a simplified representation of a system. It can be conceptual, verbal, diagrammatic, physical, or formal (mathematical) [@sayama2015].
+
+A good model is simple, valid, and robust [@sayama2015].
+
+**All models are wrong**, but some are useful [@box1979, p. 202].
+
+:::: {.columns}
+::: {.column style="width: 50%; text-align: right;"}
+![](images/strebe-2011-mercator-projection.jpg){style="width: 65%;"}
+:::
+::: {.column style="width: 50%; text-align: left;"}
+![](images/esa-2022-earth.jpg){style="width: 65%;"}
+:::
+::::
+
+::: footer
+(Mercator projection by [Daniel R. Strebe](https://commons.wikimedia.org/wiki/File:Mercator_projection_Square.JPG). Earth photo by the [European Space Agency](https://www.esa.int/ESA_Multimedia/Images/2022/04/Earth))
+:::
+
+::: {.notes}
+"We use models as simplified and purposeful representations to answer research questions and solve problems. A “simplified representation” means that we use only a limited and preferably small number of variables to represent the real system" [@railsback2019, p. 233]
+
+$+$ Variables $\rightarrow$ $+$ Complex
+
+"Models in general and ABMs in particular should therefore be as simple as possible and use the most parsimonious representation that still captures key characteristics and behaviors of a real system" [@railsback2019, p. 233]
+
+**Structurally realistic models**
+:::
+
+## Power Laws & Factor Sparsity {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; padding-top: 0px;"}
+Power laws ($y = ax^{-k}$)
+
+Pareto's/Zipf's distributions
+
+~80/20 rule: **80% of the effects come from 20% of the causes**.
+
+[...] the distributions of the sizes of cities, earthquakes, forest fires, solar flares, moon craters and people's personal fortunes all appear to follow power laws [@newman2005].
+
+`<br>`{=html}
+
+*Top U.S. retail companies by market cap as of September 2024*
+:::
+
+::: {.column style="width: 50%; font-size: 0.8em; padding-top: 0px;"}
+![](images/retaildogma-figure-1.png){fig-align="center" style="width: 80%; padding-top: 0px;"}
+:::
+::::
+
+::: footer
+(Artwork by [Retail Dogma](https://www.retaildogma.com/top-retail-companies-by-market-cap/))
+:::
+
+::: {.notes}
+:::
+
+## The Modeling Cycle {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 35%; font-size: 0.85em; padding-top: 30px;"}
+1. Formulate the question
+2. Assemble hypotheses for essential processes and structures
+3. Choose scales, entities, state variables, processes, and parameters
+4. Implement the model
+5. Analyze, test, and revise the model
+6. Communicate the model
+:::
+
+::: {.column style="width: 65%; padding-top: 0px;"}
+![](images/railsback-2019-figure-1-3.png){fig-align="center" style="width: 85%; padding-top: 20px;"}
+:::
+::::
+
+::: footer
+[@railsback2019, pp. 7-10]
+:::
+
+::: {.notes}
+:::
+
+# Pattern-Oriented Modeling
+
+## Patterns {.smaller}
+
+**A pattern is anything beyond random variation**.
+
+We can think of patterns as regularities, signals.
+
+:::: {.columns}
+::: {.column .center style="width: 50%; padding-top: 30px;"}
+![](images/national-geographic-2016-clip.gif){fig-align="center" style="width: 90%;"}
+:::
+::: {.column style="width: 50%; padding-top: 30px;"}
+![](images/wilenski-1998-flocking-model-figure-1.gif){fig-align="center" style="width: 90%;"}
+:::
+::::
+
+::: {style="font-size: 0.65em; padding-left: 30px; padding-right: 30px; margin-top: -30px" .brand-gray}
+**Alignment**: A bird tends to turn so that it is moving in the same direction that nearby birds are moving.
+
+**Separation**: A bird will turn to avoid another bird which gets too close.
+
+**Cohesion**: A bird will move towards other nearby birds (unless another bird is too close).
+:::
+
+::: footer
+(Video by [National Geographic](https://www.youtube.com/watch?v=V4f_1_r80RY). Flocking model by @wilensky1998, based on @reynolds1987.)
+:::
+
+::: {.notes}
+:::
+
+## Pattern-Oriented Modeling {.smaller}
+
+Pattern-Oriented Modeling (POM) is **the use of patterns observed in the real system as the additional information we need to make ABMs** [structurally realistic]{.brand-red .bold} and, therefore, more general, useful, scientific, and accurate.
+
+![](images/grimm-2005-figure-2.png){fig-align="center" style="padding-top: 0px; padding-bottom: 0px;"}
+
+::: footer
+(Beech forest model. Reproduced from @grimm2005a[Figure 2], based on @wissel1992 and @neuert2001.)
+:::
+
+::: {.notes}
+Pattern-oriented model design. Observed patterns that characterize old-growth beech forests [(A); images: front, M. Flade; right, C. Rademacher; top, S. Winter] include a horizontal mosaic of developmental stages [(B); x scale: 400 m; modified from (42)], the vertical patterns of tree size that define the developmental stages [(C), showing the late decaying stage; x scale: ~60 m; modified from (43)], and distributions of fallen large trees [(D), a map of fallen wood; ellipses indicate crown projections of standing trees; x scale: ~60 m; modified from (43)]. To allow these patterns to emerge from it, the model includes a grid-based horizontal structure [(E), showing grid cells in three developmental stages; x scale: 570 m), a grid-based vertical structure [(F), showing each grid cell's percentage cover for four height classes; total area shown: 1 ha)], and individual representation of large trees [(G), showing one cell's trees in the largest two height classes; cell area: 204 m²); (E) to (G) modified from (18)]. [@grimm2005a, Figure 2]
+:::
+
+## Filters {.smaller}
+
+A filter sepa­rates things, such as models that do and do not reproduce the cyclic pattern. **The basic idea of POM is to use multiple patterns to design and analyze models**.
+
+A small number of weak and qualitative but diverse patterns that characterize a system with respect to the modeling problem can be as powerful a filter as one very strong pattern, and are often easier to obtain.
+
+*For most systems*, however, **one single pattern is not enough** to decode the internal organi­zation. Multiple patterns, or filters, are needed.
+
+::: footer
+[@railsback2019]
+:::
+
+::: {.notes}
+:::
+
+## Nonrealistic Models
+
+![](images/cool-car.gif){fig-align="center" style="padding-top: 0px;"}
+
+::: {.notes}
+:::
+
+## ODD Protocol {.smaller}
+
+::::: {.columns}
+:::: {.column style="width: 30%;"}
+[Overview]{.brand-brown .bold}
+
+::: {style="font-size: 0.85em;"}
+A) [Purpose and Patterns]{.brand-red .bold}
+A) Entities, State Variables, and Scales
+A) Process Overview and Scheduling
+:::
+::::
+:::: {.column style="width: 10%;"}
+::::
+:::: {.column style="width: 30%;"}
+[Design Concepts]{.brand-brown .bold}
+
+::: {style="font-size: 0.85em;"}
+A) Basic Principles
+A) Emergence
+A) Adaptation
+A) Objectives
+A) Learning
+A) Prediction
+A) Sensing
+A) Interaction
+A) Stochasticity
+A) Collectives
+A) Observation
+:::
+::::
+:::: {.column style="width: 5%;"}
+::::
+:::: {.column style="width: 25%;"}
+[Details]{.brand-brown .bold}
+
+::: {style="font-size: 0.85em;"}
+A) Initialization
+A) Input Data
+A) Submodels
+:::
+::::
+:::::
+
+::: footer
+(Based on @railsback2019)
+:::
+
+# How to Start
+
+## Ok, But How? {.smaller}
+
+**How do you identify a set of diverse patterns that characterize the system for the problem that you are modeling?**
+
+This task, like much of modeling, uses judgment, knowledge of the sys­tem, and often, trial and error.
+
+::: {style="font-size: 0.8em; padding-top: 15px;"}
+1. **Start by formulating your model** (writing a description of it using the ODD protocol), with the purpose of the model as the only filter for designing the model structure.
+2. **Identify a set of observed patterns** that you believe characterize your system relative to the problem you model.
+3. **Define criteria for pattern-­matching**: How will you decide whether the model does or does not reproduce each pattern?
+4. Now **review** your draft model formulation and determine what additional things need to be in the model to make it possible for your characteristic patterns to emerge from it.
+:::
+
+::: footer
+[@railsback2019, p. 240]
+:::
+
+::: {.notes}
+:::
+
+## Key Questions {.smaller}
+
+![](images/gallagher-2021-figure-2.jpg){fig-align="center" style="width: 100%; padding-top: 0px; padding-bottom: 0px;"}
+
+::: footer
+[@gallagher2021]
+:::
+
+::: {.notes}
+:::
+
+## Where in the Ecological Hierarchy Can We Find Patterns? {.smaller}
+
+![](images/gallagher-2021-figure-3-adapted.png){fig-align="center" style="width: 100%; padding-top: 0px; padding-bottom: 0px;"}
+
+::: footer
+[@gallagher2021]
+:::
+
+::: {.notes}
+:::
+
+## How Should Simulations and Observations Be Compared? {.smaller}
+
+![](images/gallagher-2021-figure-4.jpg){fig-align="center" style="width: 100%; padding-top: 0px; padding-bottom: 0px;"}
+
+::: footer
+[@gallagher2021]
+:::
+
+::: {.notes}
+:::
+
+## The Modeling Cycle {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 35%; font-size: 0.85em; padding-top: 30px;"}
+1. Formulate the question
+2. Assemble hypotheses for essential processes and structures
+3. Choose scales, entities, state variables, processes, and parameters
+4. Implement the model
+5. Analyze, test, and revise the model
+6. Communicate the model
+:::
+
+::: {.column style="width: 65%; padding-top: 0px;"}
+![](images/gallagher-2021-figure-5.jpg){fig-align="center" style="width: 85%; padding-top: 20px;"}
+:::
+::::
+
+::: footer
+[@railsback2019, pp. 7-10]
+:::
+
+::: {.notes}
+:::
+
+# Example
+
+## Abstract *versus* Empirical Models {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; font-size: 0.9em; padding-top: 0px;"}
+**Abstract models** allow for the examination of **general principles** in detail [@rand2007].
+
+**Empirical models** are generally more oriented towards **prediction** and often need to address speciﬁc questions posed by policy-makers at particular sites [@sun2016].
+
+**Full spectrum modeling** combines the benefits of abstract and empirical models [@rand2007].
+:::
+
+::: {.column style="width: 50%;"}
+![](images/sun-2016-figure-3.png){fig-align="center" style="padding-top: 75px;"}
+:::
+::::
+
+::: footer
+(Artwork by @sun2016[Figure 3], based on @grimm2005a[Figure 1])
+:::
+
+::: {.notes}
+*Simple* [@sun2016; @rand2007] or *abstract* [@sun2016] models *versus* *photograph* [@parker2003], *empirical*, *complicated* [@sun2016], *elaborated and realistic (ER)* [@rand2007] models.
+
+Simple model example: Schelling's segregation model [@schelling1971].
+
+We call this the ‘Medawar zone’ because Medawar described a similar relation between the difficulty of a scientific problem and its payoff [@grimm2005a].
+:::
+
+## Question {.smaller .nostretch}
+
+::: {style="text-align: center; font-size: 1.4em; padding-top: 150px;"}
+Does [**climate change**]{.brand-red} impact the health and [**nutrition**]{.brand-red} of [**Brazilian children**]{.brand-red} [**under five years old**]{.brand-red}?
+:::
+
+::: {.notes}
+:::
+
+
+## Conceptual Model {.smaller .nostretch}
+
+![](images/carvalho-2024-figure-2.png){fig-align="center" style="width: 90.5%; padding-top: 0px;"}
+
+::: footer
+(Reproduced from @carvalho2024b[Figura 2])
+:::
+
+::: {.notes}
+Conceptual model of the environment-food-health nexus among children under five years of age using the complex systems approach: (B) the balancing feedback loop, (R) the reinforcing feedback loop, (+) positive relationship between the factors, (-) negative relationship between the factors.
+:::
+
+## Conceptual Model {.smaller .nostretch}
+
+![](images/carvalho-2024-figure-2-adapted.png){fig-align="center" style="width: 100%; padding-top: 0px;"}
+
+::: footer
+(Adapted from @carvalho2024b[Figura 2])
+:::
+
+::: {.notes}
+Conceptual model of the environment-food-health nexus among children under five years of age using the complex systems approach: (B) the balancing feedback loop, (R) the reinforcing feedback loop, (+) positive relationship between the factors, (-) negative relationship between the factors.
+:::
+
+## Patterns {.smaller .nostretch}
+
+:::: {.columns}
+::: {.column style="width: 23.125%; font-size: 0.75em;"}
+Response in [**food production**]{.brand-green} to [**global changes in temperature and precipitation**]{.brand-red}
+:::
+::: {.column style="width: 2.5%;"}
+:::
+::: {.column style="width: 23.125%; font-size: 0.75em;"}
+Response in [**food accessibility**]{.brand-brown} for low-income families to the reduction in [**food production**]{.brand-green}
+:::
+::: {.column style="width: 2.5%;"}
+:::
+::: {.column style="width: 23.125%; font-size: 0.75em;"}
+Response in [**healthy food consumption**]{.brand-light-green} by low-income families to the reduction in [**food accessibility**]{.brand-brown}
+:::
+::: {.column style="width: 2.5%;"}
+:::
+::: {.column style="width: 23.125%; font-size: 0.75em;"}
+Response in [**health and nutrition of children**]{.brand-dark-red} from low-income families to the reduction in [**healthy food consumption**]{.brand-light-green}
+:::
+::::
+
+![](images/ablohina-figure-1.png){fig-align="center" style="width: 80%; padding-top: 5px;"}
+
+::: footer
+(Artwork by [Viktoriia Ablohina](https://pt.vecteezy.com/arte-vetorial/20455612-curvado-linha-com-comecar-ponto-e-direcao-seta-dificil-caminho-caos-caminho-dificil-rota-simbolo))
+:::
+
+::: {.notes}
+:::
+
+## Agents
+
+:::: {.columns}
+::: {.column style="width: 42.5%; text-align: right; font-size: 2em; margin-top: -30px;"}
+👁️⃤
+:::
+::: {.column style="width: 2.5%; margin-top: -15px;"}
+:::
+::: {.column style="width: 55%; text-align: left; font-size: 0.8em; font-weight: bold; padding-top: 1.25em; margin-top: -15px;"}
+Observer
+:::
+::::
+
+::: {style="padding-top: 5px;"}
+:::
+
+::::: {.columns}
+:::: {.column style="width: 23.125%; text-align: center; font-size: 0.8em; font-weight: bold;"}
+Grid Cells
+
+::: {style="font-size: 2.5em;"}
+⊞`<br>`{=html}
+🌡️`<br>`{=html}
+🌧️
+:::
+::::
+:::: {.column style="width: 2.5%;"}
+::::
+:::: {.column style="width: 23.125%; text-align: center; font-size: 0.8em; font-weight: bold;"}
+Food
+
+::: {style="font-size: 2.5em;"}
+🍌🍅`<br>`{=html}
+🥬🌾`<br>`{=html}
+🥛🥩
+:::
+::::
+:::: {.column style="width: 2.5%;"}
+::::
+:::: {.column style="width: 23.125%; text-align: center; font-size: 0.8em; font-weight: bold;"}
+Families
+
+::: {style="font-size: 2.5em;"}
+👨‍👩‍👧`<br>`{=html}
+👩‍👩‍👦`<br>`{=html}
+👨‍👨‍👧
+:::
+::::
+:::: {.column style="width: 2.5%;"}
+::::
+:::: {.column style="width: 23.125%; text-align: center; font-size: 0.8em; font-weight: bold;"}
+Children
+
+::: {style="font-size: 2.5em;"}
+🧒`<br>`{=html}
+👧
+:::
+::::
+:::::
+
+::: {.notes}
+:::
+
+## LogoClim {.smaller}
+
+![](images/logoclim-interface.gif){fig-align="center" style="width: 100%; padding-top: 0px; padding-bottom: 0px;"}
+
+::: footer
+[@vartanian2025g]
+:::
+
+::: {.notes}
+:::
+
+## FoodClim {.smaller}
+
+🚧 **Under development** 🚧
+
+![](images/foodclim-figure-1.png){fig-align="center" style="width: 100%; padding-top: 0px; padding-bottom: 0px;"}
+
+::: footer
+[@vartanian2025e]
+:::
+
+::: {.notes}
+:::
+
+## GlobalSyndemic {.smaller}
+
+🚧 **Under development** 🚧
+
+![](images/globalsyndemic-figure-1.png){fig-align="center" style="width: 100%; padding-top: 0px; padding-bottom: 0px;"}
+
+::: footer
+[@vartanian2025f]
+:::
+
+::: {.notes}
+:::
+
+## Closing Remarks {.smaller}
+
+[![License: GPLv3](https://img.shields.io/badge/License-GPLv3-bd0000.svg){style="width: 12%; padding-top: 0px;"}](https://www.gnu.org/licenses/gpl-3.0)
+[![License: CC BY 4.0](images/cc-licence-badge.svg){style="width: 15%; padding-top: 0px;"}](https://creativecommons.org/licenses/by/4.0/)
+
+This presentation was created with the [Quarto](https://quarto.org/) Publishing System. The code and materials are available on [GitHub](https://github.com/danielvartan/abm-study-group-pres-4).
+
+![](images/allison-horst-figure-1.png){fig-align="center" style="width: 80%; padding-top: 50px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+## References {.smaller}
+
+::: {style="font-size: 0.75em;"}
+In accordance with the [American Psychological Association (APA) Style](https://apastyle.apa.org/), 7th edition.
+:::
+
+::: {#refs style="font-size: 0.75em;"}
+:::
+
+::: {.notes}
+:::
+
+## Thank you! {.nostretch}
+
+![](images/allison-horst-figure-3.png){fig-align="center" style="width: 70%; padding-top: 25px;"}
+
+::: footer
+(Artwork by [Allison Horst](https://twitter.com/allison_horst))
+:::
+
+::: {.notes}
+:::
+
+# Appendices
+
+## Leverage Points {.smaller}
+
+:::: {.columns}
+::: {.column style="width: 50%; padding-top: 0px;"}
+There are places within a complex system where **a small shift in one thing can produce big changes in everything** [@meadows1999].
+
+Leverage points are points of power [@meadows2008].
+
+Possible states, even if unlikely: by modelling such interactions, **it can suggest that properties exist in the system that had not been noticed in the real world situation** [@dodig-crnkovic2013a].
+:::
+::: {.column style="width: 50%; padding-top: 0px;"}
+![](images/encontro.gif){fig-align="center" style="width: 100%; padding-top: 115px;"}
+:::
+::::
+
+::: {.notes}
+:::
