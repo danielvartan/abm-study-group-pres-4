@@ -11,7 +11,7 @@
     "href": "index.html#what-is-a-model",
     "title": "Patterns for Model Structure",
     "section": "What Is a Model?",
-    "text": "What Is a Model?\nA model is a simplified representation of a system. It can be conceptual, verbal, diagrammatic, physical, or formal (mathematical) (Sayama, 2015).\nA good model is simple, valid, and robust (Sayama, 2015).\nAll models are wrong, but some are useful (Box, 1979, p. 202).\n\n\n\n\n\n\n\n(Mercator projection by Daniel R. Strebe. Earth photo by the European Space Agency)\n\n“We use models as simplified and purposeful representations to answer research questions and solve problems. A “simplified representation” means that we use only a limited and preferably small number of variables to represent the real system” (Railsback & Grimm, 2019, p. 233)\n\\(+\\) Variables \\(\\rightarrow\\) \\(+\\) Complex\n“Models in general and ABMs in particular should therefore be as simple as possible and use the most parsimonious representation that still captures key characteristics and behaviors of a real system” (Railsback & Grimm, 2019, p. 233)\nStructurally realistic models"
+    "text": "What Is a Model?\nA model is a simplified representation of a system. It can be conceptual, verbal, diagrammatic, physical, or formal (mathematical) (Sayama, 2015).\nA good model is simple, valid, and robust (Sayama, 2015).\nAll models are wrong, but some are useful (Box, 1979, p. 202).\n\n\n\n\n\n\n\n(Mercator projection by Daniel R. Strebe | Earth photo by the European Space Agency)\n\n“We use models as simplified and purposeful representations to answer research questions and solve problems. A “simplified representation” means that we use only a limited and preferably small number of variables to represent the real system” (Railsback & Grimm, 2019, p. 233)\n\\(+\\) Variables \\(\\rightarrow\\) \\(+\\) Complex\n“Models in general and ABMs in particular should therefore be as simple as possible and use the most parsimonious representation that still captures key characteristics and behaviors of a real system” (Railsback & Grimm, 2019, p. 233)\nStructurally realistic models"
   },
   {
     "objectID": "index.html#power-laws-factor-sparsity",
@@ -32,14 +32,14 @@
     "href": "index.html#patterns",
     "title": "Patterns for Model Structure",
     "section": "Patterns",
-    "text": "Patterns\nA pattern is anything beyond random variation.\nWe can think of patterns as regularities, signals.\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlignment: A bird tends to turn so that it is moving in the same direction that nearby birds are moving.\nSeparation: A bird will turn to avoid another bird which gets too close.\nCohesion: A bird will move towards other nearby birds (unless another bird is too close).\n\n\n(Video by National Geographic. Flocking model by Wilensky (1998), based on Reynolds (1987).)"
+    "text": "Patterns\nA pattern is anything beyond random variation.\nWe can think of patterns as regularities, signals.\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlignment: A bird tends to turn so that it is moving in the same direction that nearby birds are moving.\nSeparation: A bird will turn to avoid another bird which gets too close.\nCohesion: A bird will move towards other nearby birds (unless another bird is too close).\n\n\n(Video by National Geographic | Flocking model by Wilensky (1998), based on Reynolds (1987))"
   },
   {
     "objectID": "index.html#pattern-oriented-modeling-1",
     "href": "index.html#pattern-oriented-modeling-1",
     "title": "Patterns for Model Structure",
     "section": "Pattern-Oriented Modeling",
-    "text": "Pattern-Oriented Modeling\nPattern-Oriented Modeling (POM) is the use of patterns observed in the real system as the additional information we need to make ABMs structurally realistic and, therefore, more general, useful, scientific, and accurate.\n\n\n(Beech forest model. Reproduced from Grimm et al. (2005, Figure 2), based on Wissel (1992) and Neuert et al. (2001).)\n\nPattern-oriented model design. Observed patterns that characterize old-growth beech forests [(A); images: front, M. Flade; right, C. Rademacher; top, S. Winter] include a horizontal mosaic of developmental stages [(B); x scale: 400 m; modified from (42)], the vertical patterns of tree size that define the developmental stages [(C), showing the late decaying stage; x scale: ~60 m; modified from (43)], and distributions of fallen large trees [(D), a map of fallen wood; ellipses indicate crown projections of standing trees; x scale: ~60 m; modified from (43)]. To allow these patterns to emerge from it, the model includes a grid-based horizontal structure [(E), showing grid cells in three developmental stages; x scale: 570 m), a grid-based vertical structure [(F), showing each grid cell’s percentage cover for four height classes; total area shown: 1 ha)], and individual representation of large trees [(G), showing one cell’s trees in the largest two height classes; cell area: 204 m²); (E) to (G) modified from (18)]. (Grimm et al., 2005, Figure 2)"
+    "text": "Pattern-Oriented Modeling\nPattern-Oriented Modeling (POM) is the use of patterns observed in the real system as the additional information we need to make ABMs structurally realistic and, therefore, more general, useful, scientific, and accurate.\n\n\n(Beech forest model | Reproduced from Grimm et al. (2005, Figure 2), based on Wissel (1992) and Neuert et al. (2001))\n\nPattern-oriented model design. Observed patterns that characterize old-growth beech forests [(A); images: front, M. Flade; right, C. Rademacher; top, S. Winter] include a horizontal mosaic of developmental stages [(B); x scale: 400 m; modified from (42)], the vertical patterns of tree size that define the developmental stages [(C), showing the late decaying stage; x scale: ~60 m; modified from (43)], and distributions of fallen large trees [(D), a map of fallen wood; ellipses indicate crown projections of standing trees; x scale: ~60 m; modified from (43)]. To allow these patterns to emerge from it, the model includes a grid-based horizontal structure [(E), showing grid cells in three developmental stages; x scale: 570 m), a grid-based vertical structure [(F), showing each grid cell’s percentage cover for four height classes; total area shown: 1 ha)], and individual representation of large trees [(G), showing one cell’s trees in the largest two height classes; cell area: 204 m²); (E) to (G) modified from (18)]. (Grimm et al., 2005, Figure 2)"
   },
   {
     "objectID": "index.html#filters",
@@ -116,14 +116,14 @@
     "href": "index.html#conceptual-model",
     "title": "Patterns for Model Structure",
     "section": "Conceptual Model",
-    "text": "Conceptual Model\n\n\n\n\n\n(Reproduced from Carvalho et al. (2024, Figura 2))\n\nConceptual model of the environment-food-health nexus among children under five years of age using the complex systems approach: (B) the balancing feedback loop, (R) the reinforcing feedback loop, (+) positive relationship between the factors, (-) negative relationship between the factors."
+    "text": "Conceptual Model\n\n\n\n\n\n(Reproduced from Carvalho et al. (2024, Figure 2))\n\nConceptual model of the environment-food-health nexus among children under five years of age using the complex systems approach: (B) the balancing feedback loop, (R) the reinforcing feedback loop, (+) positive relationship between the factors, (-) negative relationship between the factors."
   },
   {
     "objectID": "index.html#conceptual-model-1",
     "href": "index.html#conceptual-model-1",
     "title": "Patterns for Model Structure",
     "section": "Conceptual Model",
-    "text": "Conceptual Model\n\n\n\n\n\n(Adapted from Carvalho et al. (2024, Figura 2))\n\nConceptual model of the environment-food-health nexus among children under five years of age using the complex systems approach: (B) the balancing feedback loop, (R) the reinforcing feedback loop, (+) positive relationship between the factors, (-) negative relationship between the factors."
+    "text": "Conceptual Model\n\n\n\n\n\n(Adapted from Carvalho et al. (2024, Figure 2))\n\nConceptual model of the environment-food-health nexus among children under five years of age using the complex systems approach: (B) the balancing feedback loop, (R) the reinforcing feedback loop, (+) positive relationship between the factors, (-) negative relationship between the factors."
   },
   {
     "objectID": "index.html#patterns-1",

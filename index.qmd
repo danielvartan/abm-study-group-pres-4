@@ -52,7 +52,7 @@ A good model is simple, valid, and robust [@sayama2015].
 ::::
 
 ::: footer
-(Mercator projection by [Daniel R. Strebe](https://commons.wikimedia.org/wiki/File:Mercator_projection_Square.JPG). Earth photo by the [European Space Agency](https://www.esa.int/ESA_Multimedia/Images/2022/04/Earth))
+(Mercator projection by [Daniel R. Strebe](https://commons.wikimedia.org/wiki/File:Mercator_projection_Square.JPG) | Earth photo by the [European Space Agency](https://www.esa.int/ESA_Multimedia/Images/2022/04/Earth))
 :::
 
 ::: {.notes}
@@ -144,7 +144,7 @@ We can think of patterns as regularities, signals.
 :::
 
 ::: footer
-(Video by [National Geographic](https://www.youtube.com/watch?v=V4f_1_r80RY). Flocking model by @wilensky1998, based on @reynolds1987.)
+(Video by [National Geographic](https://www.youtube.com/watch?v=V4f_1_r80RY) | Flocking model by @wilensky1998, based on @reynolds1987)
 :::
 
 ::: {.notes}
@@ -157,7 +157,7 @@ Pattern-Oriented Modeling (POM) is **the use of patterns observed in the real sy
 ![](images/grimm-2005-figure-2.png){fig-align="center" style="padding-top: 0px; padding-bottom: 0px;"}
 
 ::: footer
-(Beech forest model. Reproduced from @grimm2005a[Figure 2], based on @wissel1992 and @neuert2001.)
+(Beech forest model | Reproduced from @grimm2005a[Figure 2], based on @wissel1992 and @neuert2001)
 :::
 
 ::: {.notes}
@@ -352,13 +352,12 @@ Does [**climate change**]{.brand-red} impact the health and [**nutrition**]{.bra
 ::: {.notes}
 :::
 
-
 ## Conceptual Model {.smaller .nostretch}
 
 ![](images/carvalho-2024-figure-2.png){fig-align="center" style="width: 90.5%; padding-top: 0px;"}
 
 ::: footer
-(Reproduced from @carvalho2024b[Figura 2])
+(Reproduced from @carvalho2024b[Figure 2])
 :::
 
 ::: {.notes}
@@ -370,7 +369,7 @@ Conceptual model of the environment-food-health nexus among children under five 
 ![](images/carvalho-2024-figure-2-adapted.png){fig-align="center" style="width: 100%; padding-top: 0px;"}
 
 ::: footer
-(Adapted from @carvalho2024b[Figura 2])
+(Adapted from @carvalho2024b[Figure 2])
 :::
 
 ::: {.notes}
