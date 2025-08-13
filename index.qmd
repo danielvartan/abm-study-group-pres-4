@@ -34,31 +34,6 @@ We'll explore the following topics:
 
 # Introduction
 
-## Part III & Chapter 18 {.smaller}
-
-::::: {.columns}
-:::: {.column style="width: 50%;"}
-<!-- **Part I** was focused on introducing the basics of agent-based modeling. -->
-
-**Part II** was focused on specific parts of a model or its computer implementation.
-
-[**Part III**]{.brand-red} is more strategic and thus addresses full ABMs.
-
-`<br>`{=html}
-
-::: {style="font-size: 0.9em"}
-**Chapter 18**: *First task of pattern-­oriented modeling* ― Using observed pat­terns to design a model structure that includes enough to make the model sufficiently realistic and testable but not unnecessarily complex.
-:::
-::::
-:::: {.column style="width: 50%; text-align: center"}
-![](images/railsback-2019-p-239.png){style="width: 80%; border: 1px solid;"}
-::::
-:::::
-
-::: footer
-[@railsback2019]
-:::
-
 ## What Is a Model? {.smaller}
 
 A model is a simplified representation of a system. It can be conceptual, verbal, diagrammatic, physical, or formal (mathematical) [@sayama2015].
@@ -569,26 +544,6 @@ In accordance with the [American Psychological Association (APA) Style](https://
 ::: footer
 (Artwork by [Allison Horst](https://twitter.com/allison_horst))
 :::
-
-::: {.notes}
-:::
-
-# Appendices
-
-## Leverage Points {.smaller}
-
-:::: {.columns}
-::: {.column style="width: 50%; padding-top: 0px;"}
-There are places within a complex system where **a small shift in one thing can produce big changes in everything** [@meadows1999].
-
-Leverage points are points of power [@meadows2008].
-
-Possible states, even if unlikely: by modelling such interactions, **it can suggest that properties exist in the system that had not been noticed in the real world situation** [@dodig-crnkovic2013a].
-:::
-::: {.column style="width: 50%; padding-top: 0px;"}
-![](images/encontro.gif){fig-align="center" style="width: 100%; padding-top: 115px;"}
-:::
-::::
 
 ::: {.notes}
 :::
